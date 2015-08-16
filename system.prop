@@ -1,5 +1,63 @@
-ro.telephony.default_network=9
-telephony.lteOnGsmDevice=1
+######################## Customized property values #########################
+ro.semc.version.cust=1265-0553
+ro.semc.version.cust_revision=R17I
+ro.semc.version.fs_revision=9.2.A.2.5
+ro.semc.product.model=SOL21
+ro.semc.ms_type_id=PM-0050-BV
+ro.semc.version.fs=KDDI-LTE
+ro.semc.product.name=Xperia VL
+ro.semc.product.device=SOL21
+ro.semc.content.number=PA12
+
+# Retry configuration for data connection
+ro.telephony.default_network=8
+telephony.lteOnCdmaDevice=1
+ro.cdma.data_retry_config=26000,52000,104000,208000,416000,832000,1664000,1800000,max_retries=infinite
+ro.gsm.data_retry_config=26000,52000,104000,208000,416000,832000,1664000,1800000,max_retries=infinite
+ro.gsm.2nd_data_retry_config=26000,52000,104000,208000,416000,832000,1664000,1800000,max_retries=infinite
+
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+ril.subscription.types=NV,RUIM
 
 # Graphics
 ro.sf.lcd_density=320
+
+# System props for SOLS
+ro.semc.sols.product-code=114
+ro.semc.sols.company-code=5
+
+# System prop for tcp mss customization
+net.tcp.mss.rmnet=1380
+
+#
+# System prop for sending transmit power request to RIL during WiFi hotspot on/off
+#
+ro.ril.transmitpower=true
+
+# FM radio
+ro.fm.transmitter=true
+
+# Netmgrd
+ro.use_data_netmgrd=true
+persist.rmnet.mux=disabled
+
+# BT
+ro.qualcomm.bt.hci_transport=smd
+
+# NFC
+ro.nfc.on.default=false
+ro.nfc.se.sim.enable=true
+ro.nfc.se.smx.enable=false
+ro.nfc.icon.enable=true
+ro.nfc.vendor.name=nxp
+ro.nfc.limitation.camera=false
+
+# GPS
+persist.gps.qmienabled=true
+persist.gps.qc_nlp_in_use=0
+ro.gps.agps_provider=1
+
+# stirctmode
+persist.sys.strictmode.visual=0
+persist.sys.strictmode.disable=1

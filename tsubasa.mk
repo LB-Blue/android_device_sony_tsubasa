@@ -21,7 +21,8 @@ DEVICE_PACKAGE_OVERLAYS += device/sony/tsubasa/overlay
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -55,6 +56,28 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.sony.usb.rc:root/init.sony.usb.rc
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1 \
+	ro.allow.mock.location=1 \
+	ro.adb.secure=0 \
+	ro.secure=0 \
+	persist.sys.usb.config=mtp,adb \
+	persist.sys.isUsbOtgEnabled=true
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+	ro.semc.version.sw=1266-3320 \
+	ro.semc.version.sw_revision=9.2.A.1.215 \
+	ro.semc.version.sw_variant=GENERIC \
+	ro.semc.version.sw_type=user
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/recovery/root/sepolicy:recovery/root/sepolicy
+
+# Hijack boot
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/system/etc/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
+    $(LOCAL_PATH)/rootdir/hijack/hijack.sh:system/bin/hijack/hijack.sh
+	
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Include non-opensource parts
