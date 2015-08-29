@@ -1,0 +1,1 @@
+allow wcnss_service init_shell:fd use;

@@ -29,5 +29,13 @@ TARGET_OTA_ASSERT_DEVICE := LT25i,tsubasa
 
 BOARD_HARDWARE_CLASS := device/sony/tsubasa/cmhw
 
+# Custom sepolicy for hardware
+BOARD_SEPOLICY_DIRS += \
+    device/sony/tsubasa/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    mpdecision.te \
+	wcnss_service.te
+
 # inherit from the proprietary version
 -include vendor/sony/tsubasa/BoardConfigVendor.mk
