@@ -34,5 +34,7 @@ done
 
 ../common/setup-makefiles.sh
 
+bspatch $BASE/vendor/lib/libqc-opt.so $BASE/vendor/lib/libqc-opt.so libqc-opt.bs
+
 sudo umount system
 rm -rf system
