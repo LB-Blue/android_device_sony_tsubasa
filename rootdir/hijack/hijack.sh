@@ -246,6 +246,10 @@ sleep 1
 hexdump /temp/keyevent* | grep -e '^.* 0001 0073 .... ....$' > /temp/keycheck_up
 hexdump /temp/keyevent* | grep -e '^.* 0001 0072 .... ....$' > /temp/keycheck_down
 
+if [ "$(grep 'warmboot=0x77665502' /proc/cmdline | wc -l)" = "1" ]; then
+	touch /cache/recovery/twrp
+fi
+
 # vol-, boot recovery
 if [ -s /temp/keycheck_down -o -e /cache/recovery/boot ]
 then
