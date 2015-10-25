@@ -28,7 +28,7 @@
 
 set +x
 export PATH=/system/xbin:/system/bin:/sbin/:bin
-insmod /system/lib/modules/f2fs.ko
+#insmod /system/lib/modules/f2fs.ko
 mount -o remount,rw /
 mkdir /temp/
 mkdir /temp/ramdisk/
@@ -36,7 +36,7 @@ mkdir /temp/ramdisk/sbin
 mkdir /temp/log/
 cp /system/bin/hijack/hijack.sh /temp/
 cp /system/bin/hijack/busybox /temp/
-cp /system/bin/hijack/ramdisk.cpio /temp/
+cp /system/bin/hijack/ramdisk.img /temp/
 cp /system/bin/hijack/ramdisk-recovery.img /temp/
 cp /system/bin/hijack/overlay/* /temp/ramdisk/
 cp /system/bin/hijack/overlay/sbin/* /temp/ramdisk/sbin

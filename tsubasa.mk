@@ -76,8 +76,9 @@ PRODUCT_COPY_FILES += \
 # Hijack boot
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/system/etc/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
-    $(LOCAL_PATH)/rootdir/hijack/hijack.sh:system/bin/hijack/hijack.sh
-	
+    $(LOCAL_PATH)/rootdir/hijack/hijack.sh:system/bin/hijack/hijack.sh \
+	$(LOCAL_PATH)/rootdir/hijack/ramdisk-recovery.img:system/bin/hijack/ramdisk-recovery.img
+
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 PRODUCT_COPY_FILES += \
