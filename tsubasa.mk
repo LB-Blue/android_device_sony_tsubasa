@@ -36,6 +36,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/system/etc/pre_hw_config.sh:system/etc/pre_hw_config.sh \
     $(LOCAL_PATH)/rootdir/system/etc/hw_config.sh:system/etc/hw_config.sh
 
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/prima/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/rootdir/prima/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
 # Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/system/etc/sensors.conf:system/etc/sensors.conf

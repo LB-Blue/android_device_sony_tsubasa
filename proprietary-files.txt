@@ -284,8 +284,6 @@ etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
-etc/firmware/wlan/prima/WCNSS_cfg.dat
-etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
