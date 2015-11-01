@@ -57,10 +57,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.sony.usb.rc:root/init.sony.usb.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=1 \
-	ro.allow.mock.location=1 \
-	ro.adb.secure=0 \
-	ro.secure=0 \
 	persist.sys.usb.config=mtp,adb \
 	persist.sys.isUsbOtgEnabled=true
 
@@ -68,7 +64,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.semc.version.sw=1266-3320 \
 	ro.semc.version.sw_revision=9.2.A.1.215 \
 	ro.semc.version.sw_variant=GENERIC \
-	ro.semc.version.sw_type=user
+	ro.semc.version.sw_type=user \
+	ro.adb.secure=0 \
+	ro.secure=0 \
+	ro.allow.mock.location=1 \
+	persist.sys.root_access=1
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/recovery/root/sepolicy:recovery/root/sepolicy
