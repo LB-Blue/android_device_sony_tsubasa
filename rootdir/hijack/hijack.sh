@@ -280,12 +280,12 @@ else
     echo "======= Hijack: boot ramdisk =======" > /dev/kmsg
 	boot_rom
 	cd /
-	gzip -dc /temp/ramdisk.img | cpio -i
-#	cpio -idu < /temp/ramdisk.cpio
+#	gzip -dc /temp/ramdisk.img | cpio -i
+	cpio -idu < /temp/ramdisk.cpio
 	sync
 	sleep 2
-	cp /temp/ramdisk/* /
-	cp /temp/ramdisk/sbin/* /sbin
+#	cp /temp/ramdisk/* /
+#	cp /temp/ramdisk/sbin/* /sbin
 #	ls -laR > /temp/log/post_hijack_ls.txt
 	chroot / /init
 fi

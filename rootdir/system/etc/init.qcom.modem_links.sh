@@ -34,15 +34,10 @@ mkdir /temp/
 mkdir /temp/ramdisk/
 mkdir /temp/ramdisk/sbin
 mkdir /temp/log/
-cp /system/bin/hijack/hijack.sh /temp/
-cp /system/bin/hijack/busybox /temp/
-cp /system/bin/hijack/ramdisk.img /temp/
-cp /system/bin/hijack/ramdisk-recovery.img /temp/
-cp /system/bin/hijack/overlay/* /temp/ramdisk/
-cp /system/bin/hijack/overlay/sbin/* /temp/ramdisk/sbin
+cp /system/bin/hijack/* /temp/
 chmod 0755 /temp/hijack.sh
 chmod 0755 /temp/busybox
 chmod -R 0755 /temp/ramdisk
 cd /temp
-for i in `busybox --list` ; do ln -s /temp/busybox $i ; done
+for i in `/temp/busybox --list` ; do ln -s /temp/busybox $i ; done
 exec /temp/sh -c /temp/hijack.sh
