@@ -85,5 +85,8 @@ PRODUCT_COPY_FILES += \
 	
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
+PRODUCT_PACKAGES += \
+    libtime_genoff
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/tsubasa/tsubasa-vendor.mk)
