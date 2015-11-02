@@ -89,5 +89,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 PRODUCT_COPY_FILES += \
     vendor/eos/prebuilt/common/bootanimations/BOOTANIMATION-1280x768.zip:system/media/bootanimation.zip
 
+PRODUCT_PACKAGES += \
+    libtime_genoff
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/tsubasa/tsubasa-vendor.mk)
