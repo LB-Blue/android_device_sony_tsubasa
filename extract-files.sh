@@ -43,6 +43,7 @@ func_wget() {
 	FN=$1
 	DR=$2
 	URL=https://github.com/TheMuppets/proprietary_vendor_sony/raw/cm-13.0/blue-common/proprietary/vendor/lib/
+	rm -f $BASE/vendor/lib/$DR$FN
 	wget -O $BASE/vendor/lib/$DR$FN $URL$DR$FN
 }
 
